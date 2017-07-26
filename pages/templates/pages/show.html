@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ show.name }}</title>
+</head>
+<body>
+<h1>Show Name: {{ show.name }}</h1>
+<p>{{ show.desc }}</p>
+
+{% if imgfiles %}
+    <h4>Images</h4>
+    {% for img in imgfiles %}
+        <img src="{{ img.file.url }}">
+    {% endfor %}
+{% endif %}
+
+{% if textfiles %}
+    <h4>Text</h4>
+    {% for txt in textfiles %}
+        <a href="{{ txt.file.url }}"> {{ txt }} </a>
+    {% endfor %}
+{% endif %}
+
+
+{% if pdffiles %}
+    <h4>PDF's</h4>
+    {% for pdf in pdffiles %}
+         <a href="{{ pdf.file.url }}"> {{ pdf }} </a>
+    {% endfor %}
+{% endif %}
+
+
+{% if miscfiles %}
+    <h4>Misc</h4>
+    {% for misc in miscfiles %}
+        <a href="{{ misc.file.url }}"> {{ misc }} </a>
+    {% endfor %}
+{% endif %}
+
+
+
+miscfiles
+</body>
+</html>
